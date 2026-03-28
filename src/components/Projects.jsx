@@ -1,6 +1,7 @@
 import ETArkitekter from "../assets/et-arkitekter.webp";
 import Resolva from "../assets/resolva.webp";
 import NatureDevelopment from "../assets/naturedevelopment.webp";
+import Ceraphina from "../assets/ceraphina.webp";
 import { Link } from "react-router-dom";
 
 export default function Projects({ setCursorText }) {
