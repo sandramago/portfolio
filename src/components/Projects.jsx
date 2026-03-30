@@ -1,7 +1,9 @@
 import ETArkitekter from "../assets/et-arkitekter.webp";
 import Resolva from "../assets/resolva.webp";
 import NatureDevelopment from "../assets/naturedevelopment.webp";
+import NovaStudio from "../assets/novastudio.webp";
 import Ceraphina from "../assets/ceraphina.webp";
+import Bambini from "../assets/bambini.webp";
 import { Link } from "react-router-dom";
 
 export default function Projects({ setCursorText }) {
@@ -20,6 +22,21 @@ export default function Projects({ setCursorText }) {
       title: "Nature Development",
       image: NatureDevelopment,
       link: "https://naturedevelopment.com/",
+    },
+    {
+      title: "Nova Studio",
+      image: NovaStudio,
+      link: "https://novastudio.dk/",
+    },
+    {
+      title: "Bambini",
+      image: Bambini,
+      link: "https://bambini.dk/",
+    },
+    {
+      title: "Ceraphina",
+      image: Ceraphina,
+      link: "https://ceraphina.dk/",
     },
   ];
 

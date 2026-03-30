@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import About from "./components/About";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import ProjectsPage from "./pages/ProjectsPage";
+import ProjectsPage from "./subpages/ProjectsPage";
+import AboutPage from "./subpages/AboutPage";
 import "./App.css";
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="app" onMouseMove={handleMouseMove}>
         {/* Custom cursor */}
         <div className={`custom-cursor ${cursorText ? "active" : ""}`}>
@@ -31,7 +33,7 @@ export default function App() {
         <Navbar />
 
         <Routes>
-          {/* One page */}
+          {/* Forside */}
           <Route
             path="/"
             element={
@@ -44,10 +46,14 @@ export default function App() {
           />
 
           {/* Projekt side */}
-          <Route path="/projekter" element={<ProjectsPage />} />
+          <Route
+            path="/projekter"
+            element={<ProjectsPage setCursorText={setCursorText} />}
+          />
+          {/* Om side */}
+          <Route path="/om" element={<AboutPage />} />
         </Routes>
 
-        <Contact />
         <Footer />
       </div>
     </Router>

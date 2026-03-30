@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import MobileMenu from "./MobileMenu";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,8 +12,8 @@ function Navbar() {
           <h2 className="logo">Sandra Mago</h2>
         </Link>
 
-        {/* Navigation */}
-        <nav className={`nav ${isOpen ? "open" : ""}`}>
+        {/* Desktop */}
+        <nav className="nav-desktop">
           <ul>
             <li>
               <a href="#projekter">Projekter</a>
@@ -25,16 +26,15 @@ function Navbar() {
             </li>
           </ul>
         </nav>
-      </div>
 
-      {/* Hamburger-menu til mobil */}
-      <div
-        className={`hamburger ${isOpen ? "active" : ""}`}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
+        {/* Tablet & mobil */}
+        <button className="menu-icon" onClick={() => setIsOpen(true)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
       </div>
     </header>
   );
