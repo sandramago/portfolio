@@ -1,8 +1,25 @@
+import { useEffect } from "react";
 import cvPDF from "../assets/Sandra-Mago-CV-2026.pdf";
 import linkedinIcon from "../assets/linkedin.svg";
 import githubIcon from "../assets/github.svg";
 
 export default function Footer() {
+  useEffect(() => {
+    const section = document.querySelector(".footer");
+
+    const handleMove = (e) => {
+      const rect = section.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+      section.style.setProperty("--x", `${x}%`);
+      section.style.setProperty("--y", `${y}%`);
+    };
+
+    section.addEventListener("mousemove", handleMove);
+
+    return () => section.removeEventListener("mousemove", handleMove);
+  }, []);
   return (
     <footer className="footer">
       <section id="kontakt" className="contact">

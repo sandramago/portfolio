@@ -1,13 +1,21 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MobileMenu from "./MobileMenu";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const [isOpen, setIsOpen] = useState(false);
+const [scrolled, setScrolled] = useState(false);
 
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 50); // true når scroll > 50px
+  };
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
   return (
     <header className="header-outer">
-      <div className="header-inner">
+      <div className={`header-inner ${scrolled ? "scrolled" : ""}`}>
         <Link to="/" className="logo-link">
           <h2 className="logo">Sandra Mago</h2>
         </Link>
@@ -16,10 +24,10 @@ function Navbar() {
         <nav className="nav-desktop">
           <ul>
             <li>
-              <a href="#projekter">Projekter</a>
+              <a href="/#projekter">Projekter</a>
             </li>
             <li>
-              <a href="#om">Om</a>
+              <a href="/#om">Om</a>
             </li>
             <li>
               <a href="#kontakt">Kontakt</a>

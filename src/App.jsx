@@ -8,6 +8,7 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import ProjectsPage from "./subpages/ProjectsPage";
 import AboutPage from "./subpages/AboutPage";
+import NotFound from "./subpages/404";
 import "./App.css";
 
 export default function App() {
@@ -52,6 +53,9 @@ export default function App() {
           />
           {/* Om side */}
           <Route path="/om" element={<AboutPage />} />
+
+          {/* 404-side */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <Footer />

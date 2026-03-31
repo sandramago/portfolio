@@ -68,6 +68,10 @@ p {
 
 /* Tablet */
 @media (max-width: 1024px) {
+h1 {
+  font-size: 56px;
+}
+
 h2 {
   font-size: 48px;
 }
@@ -95,7 +99,11 @@ p {
 
 /* Mobil */
 @media (max-width: 767px) {
-  h2 {
+h1 {
+  font-size: 48px;
+}
+
+h2 {
   font-size: 40px;
 }
 

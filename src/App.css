@@ -29,7 +29,7 @@ section {
 .btn:hover {
   background-color: #081336;
   border-color: #081336;
-  color: #ffffff;
+  color: #ffffff !important;
   transition: 0.2s ease-in-out;
 }
 
@@ -88,7 +88,13 @@ section {
   padding: 15px 30px;
   border: 1px solid #d8dde5;
   border-radius: 100px;
-  background-color: rgb(242, 247, 255, 0.6);
+  background-color: transparent;
+  transition: 0.2s ease-in-out;
+}
+
+.header-inner.scrolled {
+  border: 1px solid #d8dde5;
+  background-color: rgb(255, 255, 255, 0.6);
   backdrop-filter: blur(5px); 
 }
 
@@ -240,14 +246,29 @@ li > a:hover::after, li > a.active-nav::after {
   position: relative;
   overflow: hidden;
   background: #E3F2FB;
-  background: linear-gradient(130deg, rgba(227, 242, 251, 1) 0%, rgba(148, 185, 255, 1) 50%, rgba(241, 246, 255, 1) 100%);
   border-radius: 40px 40px 0 0;
   margin-top: -40px;
   z-index: 99;
 }
 
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(191, 214, 255, 1) 0%,
+    rgba(230, 242, 255, 0.4) 100%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transition: background 0.1s ease;
+  z-index: 0;
+}
+
 .contact {
   text-align: center;
+  z-index: 1;
 }
 
 .contact h2 {
@@ -295,8 +316,8 @@ li > a:hover::after, li > a.active-nav::after {
   align-items: center;
   gap: 15px;
   padding: 20px 50px;
-  border-top: 1px solid #8babe5;
-;
+  border-top: 1px solid #cdd9e2;
+  z-index: 1;
 }
 
 .secondary-footer p {
@@ -356,13 +377,13 @@ li > a:hover::after, li > a.active-nav::after {
 .hero {
   position: relative;
   width: 100%;
-  height: 105vh;
+  height: 95vh;
   background-color: #e4f1ff; 
   overflow: hidden !important;
   display: flex;
   align-items: center;
   justify-content: left;
-  padding: 0px 50px !important;
+  padding: 80px 50px 0px!important;
 }
 
 .hero-overlay {
@@ -370,7 +391,7 @@ li > a:hover::after, li > a.active-nav::after {
   inset: 0; 
   background-repeat: repeat; 
   background-size: cover; 
-  opacity: 0.1; 
+  opacity: 0.05; 
   pointer-events: none; 
   z-index: 2;
 }
@@ -670,4 +691,40 @@ li > a:hover::after, li > a.active-nav::after {
 .about-subpage-text {
   text-align: start;
 }
+
+/***** 404 - underside *****/
+.notfound {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.notfound-content {
+  max-width: 500px;
+}
+
+.notfound h1 {
+  opacity: 0;
+  padding-bottom: 20px;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.notfound p {
+  padding-bottom: 40px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
