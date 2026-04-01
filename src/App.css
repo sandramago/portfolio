@@ -3,6 +3,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  overflow-x: hidden !important;
 }
 
 html {
@@ -195,7 +196,7 @@ li > a:hover::after, li > a.active-nav::after {
   position: fixed;
   top: 0;
   right: -100%; 
-  width: 95%;
+  width: 90%;
   height: 100vh;
   border-radius: 40px 0 0 40px;
   background: #fff;
@@ -226,7 +227,7 @@ li > a:hover::after, li > a.active-nav::after {
 }
 
 .menu-content {
-  width: 95%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -244,8 +245,9 @@ li > a:hover::after, li > a.active-nav::after {
 
 .menu-content ul li a {
   text-decoration: none;
-  font-size: 32px;
+  font-size: 40px;
   color: #1f1f1f;
+  font-family: "The Seasons", serif;
 }
 
 .close-btn {
