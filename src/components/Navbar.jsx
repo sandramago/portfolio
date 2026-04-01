@@ -3,19 +3,22 @@ import React, { useState, useEffect } from "react";
 import MobileMenu from "./MobileMenu";
 
 function Navbar() {
-const [isOpen, setIsOpen] = useState(false);
-const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-useEffect(() => {
-  const handleScroll = () => {
-    setScrolled(window.scrollY > 20); // true når scroll > 50px
-  };
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header className="header-outer">
       <div className={`header-inner ${scrolled ? "scrolled" : ""}`}>
+        {/* Logo */}
         <Link to="/" className="logo-link">
           <h2 className="logo">Sandra Mago</h2>
         </Link>
@@ -30,13 +33,17 @@ useEffect(() => {
               <Link to="/#om">Om</Link>
             </li>
             <li>
-              <Link to="#kontakt">Kontakt</Link>
+              <Link to="/#kontakt">Kontakt</Link> 
             </li>
           </ul>
         </nav>
 
-        {/* Tablet & mobil */}
-        <button className="menu-icon" onClick={() => setIsOpen(true)}>
+        {/* Mobil */}
+        <button
+          className="menu-icon"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Menu"
+        >
           <span></span>
           <span></span>
           <span></span>
