@@ -1,3 +1,4 @@
+/***** Generelt *****/
 /* Desktop */
 body {
   margin: 0;
@@ -36,7 +37,7 @@ section {
 /* Tablet */
 @media (max-width: 1024px) {
   section {
-  padding: 7px 30px;
+  padding: 70px 30px;
 }
 
 .btn {
@@ -89,6 +90,7 @@ section {
   border: 1px solid #d8dde5;
   border-radius: 100px;
   background-color: transparent;
+  z-index: 99;
   transition: 0.2s ease-in-out;
 }
 
@@ -159,6 +161,7 @@ li > a:hover::after, li > a.active-nav::after {
   background: #1f1f1f;
 }
 
+/* Mobilmenu */
 .menu-icon {
   display: none;
   flex-direction: column;
@@ -175,7 +178,6 @@ li > a:hover::after, li > a.active-nav::after {
   transition: all 0.3s ease;
 }
 
-/* Mobilnavigation */
 @media (max-width: 768px) {
   .nav-desktop {
     display: none;
@@ -188,7 +190,7 @@ li > a:hover::after, li > a.active-nav::after {
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: -100%; /* start off-screen */
+  left: -100%; 
   width: 100%;
   height: 100%;
   background: rgba(255,255,255,0.95);
@@ -306,7 +308,6 @@ li > a:hover::after, li > a.active-nav::after {
   .link-container a {
   font-size: 12px;
 }
-
 }
 
 .secondary-footer {
@@ -607,7 +608,7 @@ li > a:hover::after, li > a.active-nav::after {
 }
 
 .heading-text-container {
-  gap: 50px;
+  gap: 40px;
   padding-bottom: 60px;
 }
 
@@ -635,26 +636,13 @@ li > a:hover::after, li > a.active-nav::after {
 
 /***** Om - underside *****/
 .about-subpage {
-  padding: 175px 50px 140px;
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .about-subpage {
-    padding: 145px 30px 110px;
-}
-}
-
-/* Mobil */
-@media (max-width: 767px) {
-  .about-subpage {
-  padding: 130px 20px 90px;
-}
+  padding: 100px 50px 140px;
 }
 
 .image-text-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 100px;
 }
 
@@ -663,9 +651,33 @@ li > a:hover::after, li > a.active-nav::after {
 }
 
 .about-image {
-  width: 350px;
-  height: 350px;
+  width: 50%;
   object-fit: cover;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .about-subpage {
+    padding: 100px 30px 110px;
+}
+.image-text-container {
+  gap: 40px;
+}
+}
+
+/* Mobil */
+@media (max-width: 767px) {
+  .about-subpage {
+  padding: 90px 20px 90px;
+}
+
+.image-text-container {
+  flex-direction: column;
+}
+
+.about-image {
+  width: 100%;
+}
 }
 
 .shape {
@@ -690,6 +702,154 @@ li > a:hover::after, li > a.active-nav::after {
 
 .about-subpage-text {
   text-align: start;
+  padding-bottom: 40px;
+}
+
+.about-subpage p {
+  line-height: 1.3rem;
+}
+
+.profile {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.profile p {
+  width: 800px;
+}
+
+.profile-heading-container {
+ position: sticky !important;
+  position: -webkit-sticky;
+  display: flex;
+  flex-direction: column;
+  top: 80px;
+  height: fit-content;
+}
+
+.profile-heading-container h6 {
+  font-size: 56px;
+  padding-bottom: 10px;
+}
+
+.profile-heading-container h2 {
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.skills {
+    width: 800px;
+}
+
+.skills p {
+  padding-bottom: 40px;
+}
+
+.skills ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.skills li {
+  list-style: none;
+  border: 1px solid #d8dde5;
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+.developer-skills {
+  padding-bottom: 40px;
+}
+
+.experiences {
+  width: 800px;
+}
+
+.experience-container {
+  padding-bottom: 40px;
+}
+
+.experience-container h5 {
+  padding-top: 10px;
+}
+
+.heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-bottom: 20px;
+}
+
+.experience-link {
+  text-decoration: none;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+.profile {
+  gap: 40px;
+  padding-top: 70px;
+}
+
+.profile p {
+  width: 100%;
+}
+
+.profile-heading-container h6 {
+    font-size: 48px;
+}
+
+.profile-heading-container h2 {
+  font-size: 20px;
+}
+
+.profile-heading-container {
+  width: 200px;
+}
+
+.skills {
+  width: 100%;
+}
+
+.experiences {
+  width: 100%;
+}
+}
+
+/* Mobil */
+@media (max-width: 767px) {
+.profile {
+padding-top: 50px;
+flex-direction: column;
+gap: 20px;
+}
+
+.profile-heading-container h6 {
+  font-size: 24px;
+  padding: 0;
+}
+
+.profile-heading-container h2 {
+  font-size: 20px;
+  padding-bottom: 2px;
+}
+
+.profile-heading-container {
+  width: 100%;
+  position: unset !important;
+  flex-direction: row;
+  gap: 10px;
+  align-items: end;
+}
 }
 
 /***** 404 - underside *****/

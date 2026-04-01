@@ -8,7 +8,7 @@ const [scrolled, setScrolled] = useState(false);
 
 useEffect(() => {
   const handleScroll = () => {
-    setScrolled(window.scrollY > 50); // true når scroll > 50px
+    setScrolled(window.scrollY > 20); // true når scroll > 50px
   };
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
@@ -24,13 +24,13 @@ useEffect(() => {
         <nav className="nav-desktop">
           <ul>
             <li>
-              <a href="/#projekter">Projekter</a>
+              <Link to="/#projekter">Projekter</Link>
             </li>
             <li>
-              <a href="/#om">Om</a>
+              <Link to="/#om">Om</Link>
             </li>
             <li>
-              <a href="#kontakt">Kontakt</a>
+              <Link to="#kontakt">Kontakt</Link>
             </li>
           </ul>
         </nav>

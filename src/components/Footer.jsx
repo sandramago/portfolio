@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import cvPDF from "../assets/Sandra-Mago-CV-2026.pdf";
 import linkedinIcon from "../assets/linkedin.svg";
 import githubIcon from "../assets/github.svg";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   useEffect(() => {
@@ -25,46 +26,46 @@ export default function Footer() {
       <section id="kontakt" className="contact">
         <h2>Let's connect</h2>
         <div className="link-container">
-          <a href="mailto:sandramago@outlook.dk">sandramago@outlook.dk</a>
-          <a href="tel:+4522947700">+45 22 94 77 00</a>
-          <a
-            href="https://maps.app.goo.gl/JCGbyGEomtaecdFYA"
+          <Link to="mailto:sandramago@outlook.dk">sandramago@outlook.dk</Link>
+          <Link to="tel:+4522947700">+45 22 94 77 00</Link>
+          <Link
+            to="https://maps.app.goo.gl/JCGbyGEomtaecdFYA"
             target="_blank"
             rel="noopener noreferrer"
           >
             8000 Aarhus
-          </a>
+          </Link>
         </div>
-        <a
-          href={cvPDF}
+        <Link
+          to={cvPDF}
           target="_blank"
           rel="noopener noreferrer"
           className="btn"
         >
           Download CV
-        </a>
+        </Link>
       </section>
 
       <section className="secondary-footer">
         <p>© {new Date().getFullYear()} Sandra Mago</p>
         <div className="icons-container">
-          <a
-            href="https://www.linkedin.com/in/sandramago/"
+          <Link
+            to="https://www.linkedin.com/in/sandramago/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
           >
             <img src={linkedinIcon} alt="LinkedIn" className="socials-icon" />
-          </a>
+          </Link>
 
-          <a
-            href="https://github.com/sandramago"
+          <Link
+            to="https://github.com/sandramago"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
           >
             <img src={githubIcon} alt="GitHub" className="socials-icon" />
-          </a>
+          </Link>
         </div>
       </section>
     </footer>

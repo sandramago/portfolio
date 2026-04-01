@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function About() {
   return (
     <section id="om" className="about">
@@ -18,9 +20,9 @@ export default function About() {
           og erhverve mig nye.
         </p>
       </div>
-      <a href="/om" className="btn">
+      <Link to="/om" className="btn">
         Lær mig bedre at kende
-      </a>
+      </Link>
     </section>
   );
 }

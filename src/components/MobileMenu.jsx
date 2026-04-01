@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function MobileMenu({ isOpen, onClose }) {
   return (
@@ -9,19 +10,19 @@ export default function MobileMenu({ isOpen, onClose }) {
         </button>
         <ul>
           <li>
-            <a href="#projekter" onClick={onClose}>
+            <Link to="#projekter" onClick={onClose}>
               Projekter
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#om" onClick={onClose}>
+            <Link to="#om" onClick={onClose}>
               Om
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#kontakt" onClick={onClose}>
+            <Link to="#kontakt" onClick={onClose}>
               Kontakt
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
