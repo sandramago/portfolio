@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import profileImg from "../assets/sandra-mago.webp";
 import cvPDF from "../assets/Sandra-Mago-CV-2026.pdf";
 
 export default function AboutPage() {
   return (
     <section className="about-subpage">
       <div className="image-text-container">
-        <img src="/src/assets/sandra-mago.webp" className="about-image shape" />
+        <img src={profileImg} className="about-image shape" />
         <div>
           <div className="about-subpage-text">
             <h1>Sandra Mago</h1>
