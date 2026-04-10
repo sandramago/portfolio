@@ -537,14 +537,11 @@ li > a:hover::after, li > a.active-nav::after {
 
 .hero-content {
   position: absolute;   
-  bottom: 0;       
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2; 
+  width: 100vw;
 }
 
 .hero-image {
-  width: 150% !important;
+  width: 100% !important;
   display: block;
   transform: translateY(20px);
   opacity: 0;
@@ -587,7 +584,7 @@ li > a:hover::after, li > a.active-nav::after {
 }
 
 .hero-content {
-  left: -10%;
+  left: -50%;
 }
 
 .hero-image {
