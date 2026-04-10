@@ -139,7 +139,7 @@ export default function AboutPage() {
                 MagoMade
               </Link>
               <div className="heading-container">
-                <h5>Praktik | Ejer, webudvikler & visuel designer</h5>
+                <h5>Praktik | Ejer, udvikler & designer</h5>
                 <h6>2022 - 2025</h6>
               </div>
               <p>

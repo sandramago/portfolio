@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import grainTexture from "../assets/texture-overlay.jpg";
 import cvPDF from "../assets/Sandra-Mago-CV-2026.pdf";
 import linkedinIcon from "../assets/linkedin.svg";
 import githubIcon from "../assets/github.svg";
@@ -23,6 +24,11 @@ export default function Footer() {
   }, []);
   return (
     <footer className="footer">
+      {/* Overlay */}
+      <div
+        className="footer-overlay"
+        style={{ backgroundImage: `url(${grainTexture})` }}
+      />
       <section id="kontakt" className="contact">
         <h2>Let's connect</h2>
         <div className="link-container">

@@ -84,7 +84,7 @@ section {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  border: 1px solid #d8dde5;
+  border: 1px solid #cacfd6;
   border-radius: 100px;
   background-color: transparent;
   z-index: 99;
@@ -335,12 +335,23 @@ li > a:hover::after, li > a.active-nav::after {
   inset: 0;
   background: radial-gradient(
     circle at var(--x, 50%) var(--y, 50%),
-    rgba(191, 214, 255, 1) 0%,
-    rgba(230, 242, 255, 0.4) 100%,
+    #a8c6fa 0%,
+    #edf6ff66 100%,
     transparent 70%
   );
   pointer-events: none;
   transition: background 0.1s ease;
+  z-index: 0;
+}
+
+.footer-overlay {
+  position: absolute;
+  height: 105vh;
+  inset: 0; 
+  background-repeat: repeat; 
+  background-size: cover; 
+  opacity: 0.2; 
+  pointer-events: none; 
   z-index: 0;
 }
 
@@ -393,7 +404,6 @@ li > a:hover::after, li > a.active-nav::after {
   align-items: center;
   gap: 15px;
   padding: 20px 50px;
-  border-top: 1px solid #cdd9e2;
   z-index: 1;
 }
 
@@ -463,12 +473,50 @@ li > a:hover::after, li > a.active-nav::after {
   padding: 80px 50px 0px!important;
 }
 
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animation overlay */
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #e4f1ff;
+}
+
+.background span {
+  position: absolute;
+  width: 25vmin;
+  height: 25vmin;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  animation: move linear infinite;
+  opacity: 0.7;
+  filter: blur(20px);
+}
+
+@keyframes move {
+  100% {
+    transform: rotate(360deg) translate3d(0, 0, 1px);
+  }
+}
+
+.hero-overlay,
+.hero-bg-text,
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
 .hero-overlay {
   position: absolute;
+  height: 105vh;
   inset: 0; 
   background-repeat: repeat; 
   background-size: cover; 
-  opacity: 0.05; 
+  opacity: 0.2; 
   pointer-events: none; 
   z-index: 2;
 }
@@ -523,6 +571,11 @@ li > a:hover::after, li > a.active-nav::after {
 
 /* Mobil */
 @media (max-width: 767px) {
+  .background span {
+    width: 40vmin;
+    height: 40vmin;
+  }
+
   .hero {
   height: 55vh;
   padding: 50px 20px 0px !important;
@@ -579,6 +632,7 @@ li > a:hover::after, li > a.active-nav::after {
   display: grid;
   gap: 15px;
   grid-template-columns: repeat(3, 1fr); 
+
 }
 
 @media (max-width: 1024px) {
@@ -668,6 +722,8 @@ li > a:hover::after, li > a.active-nav::after {
 
 .about-text h2 {
   padding-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.8s forwards;
 }
 
 .about-text p {
@@ -972,6 +1028,14 @@ gap: 20px;
   flex-direction: row;
   gap: 10px;
   align-items: end;
+}
+
+.experience-container h5 {
+  padding-top: 10px;
+}
+
+.experience-link {
+  font-size: 14px;
 }
 }
 
